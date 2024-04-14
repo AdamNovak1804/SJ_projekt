@@ -161,3 +161,4 @@ cython_debug/
 
 # Disable user programs tracking
 inputs/user_programs/*
+!inputs/user_programs/EXAMPLEPROG1
