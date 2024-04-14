@@ -1,0 +1,8 @@
+BEGIN
+    a := 5;
+    b := 078;
+    IF THEN
+        READ (tent1, a087);
+    ELSE
+        WRITE (57 + ab3 , (6));
+END

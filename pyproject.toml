@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "SJ projekt"
+description = "Lexical and syntactical analyser for the SMALL-like language"
+version = "0.1.0"
+readme = "README.md"
+authors = [
+    "Adam Novák <novakadam18042000@gmail.com>",
+    "Nikola Blahovičová <xblahovicova@stuba.sk>"
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+typer = "^0.12.3"
+automata-lib = "^8.3.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

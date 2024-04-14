@@ -1,0 +1,8 @@
+BEGIN
+    c := -97
+    WRITE (
+        +487 - (c + (-8)),
+        bebe,
+        bebe + c - (c - -5)
+    );
+END
