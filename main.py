@@ -13,10 +13,11 @@ app = typer.Typer()
 
 
 @app.callback(invoke_without_command=True)
-def full_analysis() -> None:
-    logger.info('Running full code analysis')
-    perform_lexical_anaylsis()
-    perform_syntax_anaylsis()
+def full_analysis(context: typer.Context) -> None:
+    if context.invoked_subcommand is None:
+        logger.info('Running full code analysis')
+        perform_lexical_anaylsis()
+        perform_syntax_anaylsis()
 
 
 @app.command()
