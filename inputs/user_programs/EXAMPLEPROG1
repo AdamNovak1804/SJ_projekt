@@ -1,1 +1,5 @@
-aaababb
+BEGIN
+    IF NOT ( bexp ) AND FALSE OR TRUE THEN
+        er98 := ( 57 - e77 ) + t11 ;
+    ;
+END
