@@ -32,3 +32,10 @@ def read_program(src: str) -> str:
                 return buffer_string
         except IOError as e:
             logger.error(e.errno, e.strerror)
+
+
+def create_token_stream(src: str, data: list) -> None:
+    with open(src, 'w') as file:
+        for line in data:
+            file.write(line + '\n')
+

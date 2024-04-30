@@ -6,8 +6,22 @@ from automata.fa.dfa import DFAStateT
 
 from file_reader.file_reader import read_config_json
 from file_reader.file_reader import read_program
+from file_reader.file_reader import create_token_stream
 
 logger = logging.getLogger('logger')
+
+
+def preprocess_program_string(program_string: str) -> str:
+    # for all given characters add whitespaces around
+    characters = [';',':=','(',')','+','-',',']
+    for char in characters:
+        program_string = program_string.replace(char, ' ' + char + ' ')
+
+    # terminal symbol, used to shut down DKA
+    program_string += '$'
+
+    # return modified program string back
+    return program_string
 
 
 def perform_lexical_anaylsis() -> None:
@@ -34,8 +48,8 @@ def perform_lexical_anaylsis() -> None:
     logger.info('Reading program specified in config file')
     program_string = read_program(config['program_path'])
 
-    # add terminal symbol for the program
-    program_string += '$'
+    # Add whitespaces between symbols and terminal symbol at the end
+    program_string = preprocess_program_string(program_string)
 
     # create a generator object that yields current state for every iteration until final state
     dfa_stepwise_generator = lexical_analyser.read_input_stepwise(input_str=program_string)
@@ -51,14 +65,17 @@ def perform_lexical_anaylsis() -> None:
         # create a 'function' which will be used in tokenizer lookup table
         token_adept = '_'.join([previous_state, current_state, terminal])
 
-        print(repr(token_adept))
+        logger.info(f'Reading terminal {repr(terminal)}, moving from state {previous_state} to state {current_state}')
 
         # if the token_adept 'function' key is in the tokenizer dictionary, push the token
         if token_adept in tokenizer:
-            token_list.append(tokenizer[token_adept])
+            token = tokenizer[token_adept]
+            token_list.append(token)
+
+            logger.info(f'Adding {token} to the list of tokens')
 
         # update the previous state and index
         previous_state = current_state
         index += 1
 
-    print(token_list)
+    create_token_stream(config['output_path'], token_list)

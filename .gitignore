@@ -162,3 +162,7 @@ cython_debug/
 # Disable user programs tracking
 inputs/user_programs/*
 !inputs/user_programs/EXAMPLEPROG1
+
+# Disable output tracking
+outputs/*
+!outputs/readme.txt

@@ -1,0 +1,1 @@
+Use this folder to store outputs of lexical and syntax analysis.
