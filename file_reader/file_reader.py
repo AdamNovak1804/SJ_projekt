@@ -39,3 +39,10 @@ def create_token_stream(src: str, data: list) -> None:
         for line in data:
             file.write(line + '\n')
 
+def read_token_stream(src: str) -> str:
+    token_file = open ("outputs/token_stream", "r")
+    token_list = [row.replace("\n", "") for row in token_file.readlines()]
+    return token_list
+
+
+

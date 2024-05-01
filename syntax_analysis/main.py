@@ -1,7 +1,11 @@
 from syntax_analysis.config import rules
+from file_reader.file_reader import read_token_stream
 
 def perform_syntax_anaylsis() -> None:
-    tokens = ["begin", "if", "not", "openparen", "true", "closeparen", "and", "false", "or", "true", "then", "ident", "assignment", "openparen", "num", "minus", "ident", "closeparen", "plus", "ident", "semicolon", "semicolon", "end"]
+    tokens = read_token_stream("outputs/token_stream")
+    print(tokens)
+
+    # tokens = ["begin", "if", "not", "openparen", "true", "closeparen", "and", "false", "or", "true", "then", "ident", "assignment", "openparen", "num", "minus", "ident", "closeparen", "plus", "ident", "semicolon", "semicolon", "end"]
     stack = ["PROGRAM"]
     number = 0
     token = tokens[number]
@@ -17,11 +21,12 @@ def perform_syntax_anaylsis() -> None:
                 if rule != "e":
                     stack.append(rule)
         else:
-            print(token)
             stack.pop()
             if number == len(tokens)-1:
-                if stack.length > 0:
-                print("Stack is not empty")
+                if len(stack) > 0:
+                    print("Stack is not empty")
+                else:
+                    print("Program is valid")
                 break
             number += 1
             token = tokens[number]
