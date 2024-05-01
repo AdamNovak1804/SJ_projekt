@@ -1,4 +1,4 @@
-Rules = {
+rules = {
   "PROGRAMbegin": "PROGRAM=begin STATEMENT_LIST end",
   "STATEMENT_LISTread": "STATEMENT_LIST=STATEMENT STATEMENTS",
   "STATEMENT_LISTwrite": "STATEMENT_LIST=STATEMENT STATEMENTS",
@@ -34,6 +34,7 @@ Rules = {
   "EXPRESSIONOPSminus": "EXPRESSIONOPS=OP FACTOR EXPRESSIONOPS",
   "EXPRESSIONOPScomma": "EXPRESSIONOPS=e",
   "EXPRESSIONOPScloseparen": "EXPRESSIONOPS=e",
+  "EXPRESSIONOPSsemicolon": "EXPRESSIONOPS=e",
   "FACTORopenparen": "FACTOR=openparen EXPRESSION closeparen",
   "FACTORident": "FACTOR=ident",
   "FACTORnum": "FACTOR=NUMBER",
@@ -47,6 +48,7 @@ Rules = {
   "BEXPRnot": "BEXPR=BTERM BEXPRS",
   "BEXPRScloseparen": "BEXPR=e",
   "BEXPRSor": "BEXPRS=or BTERM BEXPRS",
+  "BEXPRSthen": "BEXPRS=e",
   "BTERMopenparen": "BTERM=BFACTOR BTERMS",
   "BTERMnot": "BTERM=BFACTOR BTERMS",
   "BTERMtrue": "BTERM=BFACTOR BTERMS",
@@ -54,6 +56,7 @@ Rules = {
   "BTERMScloseparen": "BTERMS=e",
   "BTERMSand": "BTERMS=and BTERM BTERMS",
   "BTERMSor": "BTERMS=e",
+  "BTERMSthen": "BTERMS=e",
   "BFACTORopenparen": "BFACTOR=openparen BEXPR closeparen",
   "BFACTORtrue": "BFACTOR=true",
   "BFACTORfalse": "BFACTOR=false",
@@ -65,6 +68,4 @@ Rules = {
   "OPSplus": "OPS=OP",
   "OPSminus": "OPS=OP",
   "OPSnum": "OPS=e",
- 
-  
 }
