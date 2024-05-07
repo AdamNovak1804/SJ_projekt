@@ -1,0 +1,592 @@
+{
+    "program_path": "inputs/user_programs/EXAMPLEPROG1",
+    "output_path": "outputs/token_stream",
+    "automata": {
+        "states": [
+            "initial", "ident", "final", "num0", "num",
+            "assignment0", "assignment1",
+            "plus", "minus", "comma", "openparen", "closeparen", "semicolon",
+            "and0", "and1", "and2",
+            "begin0", "begin1", "begin2", "begin3", "begin4",
+            "e0",
+                "else1", "else2", "else3",
+                "end1", "end2",
+            "false0", "false1", "false2", "false3", "false4",
+            "if0", "if1",
+            "not0", "not1", "not2",
+            "or0", "or1",
+            "read0", "read1", "read2", "read3",
+            "t0",
+                "then1", "then2", "then3",
+                "true1", "true2", "true3",
+            "write0", "write1", "write2", "write3", "write4",
+            "collector"
+        ],
+        "input_symbols": [
+            "\n", " ", ";", ":", "=", "(", ")", "+", "-", ",",
+            "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
+            "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
+            "0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
+            "$",
+            "*", "/", "§", "ß", "[", "]", "{", "}", "@", "€", "!", "#", "^", "%"
+        ],
+        "transitions": {
+            "initial": {
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector",
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "+": "plus",
+                "-": "minus",
+                ",": "comma",
+                "(": "openparen",
+                ")": "closeparen",
+                ":": "assignment0",
+                "=": "assignment1", 
+                ";": "semicolon",
+                "0": "num0",
+                "1": "num", "2": "num", "3": "num", "4": "num", "5": "num", "6": "num", "7": "num", "8": "num", "9": "num", 
+                "A": "and0",
+                "B": "begin0",
+                "E": "e0",
+                "F": "false0",
+                "I": "if0",
+                "N": "not0",
+                "O": "or0",
+                "R": "read0",
+                "T": "t0",
+                "W": "write0",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "C": "ident", "D": "ident", "G": "ident", "H": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "P": "ident", "Q": "ident", "S": "ident", "U": "ident", "V": "ident", "X": "ident", "Y": "ident", "Z": "ident"
+            },
+            "plus": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "num0", "1": "num", "2": "num", "3": "num", "4": "num", "5": "num", "6": "num", "7": "num", "8": "num", "9": "num",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "minus": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "num0", "1": "num", "2": "num", "3": "num", "4": "num", "5": "num", "6": "num", "7": "num", "8": "num", "9": "num",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "comma": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "num0", "1": "num", "2": "num", "3": "num", "4": "num", "5": "num", "6": "num", "7": "num", "8": "num", "9": "num",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "openparen": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "num0", "1": "num", "2": "num", "3": "num", "4": "num", "5": "num", "6": "num", "7": "num", "8": "num", "9": "num",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "closeparen": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "num0", "1": "num", "2": "num", "3": "num", "4": "num", "5": "num", "6": "num", "7": "num", "8": "num", "9": "num",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "collector": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "=": "collector",
+                "a": "collector", "b": "collector", "c": "collector", "d": "collector", "e": "collector", "f": "collector", "g": "collector", "h": "collector", "i": "collector", "j": "collector", "k": "collector", "l": "collector", "m": "collector", "n": "collector", "o": "collector", "p": "collector", "q": "collector", "r": "collector", "s": "collector", "t": "collector", "u": "collector", "v": "collector", "w": "collector", "x": "collector", "y": "collector", "z": "collector",
+                "A": "collector", "B": "collector", "C": "collector", "D": "collector", "E": "collector", "F": "collector", "G": "collector", "H": "collector", "I": "collector", "J": "collector", "K": "collector", "L": "collector", "M": "collector", "N": "collector", "O": "collector", "P": "collector", "Q": "collector", "R": "collector", "S": "collector", "T": "collector", "U": "collector", "V": "collector", "W": "collector", "X": "collector", "Y": "collector", "Z": "collector",
+                "0": "collector", "1": "collector", "2": "collector", "3": "collector", "4": "collector", "5": "collector", "6": "collector", "7": "collector", "8": "collector", "9": "collector",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "assignment0": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "=": "assignment1",
+                "a": "collector", "b": "collector", "c": "collector", "d": "collector", "e": "collector", "f": "collector", "g": "collector", "h": "collector", "i": "collector", "j": "collector", "k": "collector", "l": "collector", "m": "collector", "n": "collector", "o": "collector", "p": "collector", "q": "collector", "r": "collector", "s": "collector", "t": "collector", "u": "collector", "v": "collector", "w": "collector", "x": "collector", "y": "collector", "z": "collector",
+                "A": "collector", "B": "collector", "C": "collector", "D": "collector", "E": "collector", "F": "collector", "G": "collector", "H": "collector", "I": "collector", "J": "collector", "K": "collector", "L": "collector", "M": "collector", "N": "collector", "O": "collector", "P": "collector", "Q": "collector", "R": "collector", "S": "collector", "T": "collector", "U": "collector", "V": "collector", "W": "collector", "X": "collector", "Y": "collector", "Z": "collector",
+                "0": "collector", "1": "collector", "2": "collector", "3": "collector", "4": "collector", "5": "collector", "6": "collector", "7": "collector", "8": "collector", "9": "collector",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "assignment1": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "num0", "1": "num", "2": "num", "3": "num", "4": "num", "5": "num", "6": "num", "7": "num", "8": "num", "9": "num",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "semicolon": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "num0", "1": "num", "2": "num", "3": "num", "4": "num", "5": "num", "6": "num", "7": "num", "8": "num", "9": "num",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "num0": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                ":": "collector", "=": "collector",
+                "a": "collector", "b": "collector", "c": "collector", "d": "collector", "e": "collector", "f": "collector", "g": "collector", "h": "collector", "i": "collector", "j": "collector", "k": "collector", "l": "collector", "m": "collector", "n": "collector", "o": "collector", "p": "collector", "q": "collector", "r": "collector", "s": "collector", "t": "collector", "u": "collector", "v": "collector", "w": "collector", "x": "collector", "y": "collector", "z": "collector",
+                "A": "collector", "B": "collector", "C": "collector", "D": "collector", "E": "collector", "F": "collector", "G": "collector", "H": "collector", "I": "collector", "J": "collector", "K": "collector", "L": "collector", "M": "collector", "N": "collector", "O": "collector", "P": "collector", "Q": "collector", "R": "collector", "S": "collector", "T": "collector", "U": "collector", "V": "collector", "W": "collector", "X": "collector", "Y": "collector", "Z": "collector",
+                "0": "collector", "1": "collector", "2": "collector", "3": "collector", "4": "collector", "5": "collector", "6": "collector", "7": "collector", "8": "collector", "9": "collector",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "num": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                ":": "collector", "=": "collector",
+                "0": "num", "1": "num", "2": "num", "3": "num", "4": "num", "5": "num", "6": "num", "7": "num", "8": "num", "9": "num",
+                "a": "collector", "b": "collector", "c": "collector", "d": "collector", "e": "collector", "f": "collector", "g": "collector", "h": "collector", "i": "collector", "j": "collector", "k": "collector", "l": "collector", "m": "collector", "n": "collector", "o": "collector", "p": "collector", "q": "collector", "r": "collector", "s": "collector", "t": "collector", "u": "collector", "v": "collector", "w": "collector", "x": "collector", "y": "collector", "z": "collector",
+                "A": "collector", "B": "collector", "C": "collector", "D": "collector", "E": "collector", "F": "collector", "G": "collector", "H": "collector", "I": "collector", "J": "collector", "K": "collector", "L": "collector", "M": "collector", "N": "collector", "O": "collector", "P": "collector", "Q": "collector", "R": "collector", "S": "collector", "T": "collector", "U": "collector", "V": "collector", "W": "collector", "X": "collector", "Y": "collector", "Z": "collector",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "ident": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "and0": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "N": "and1",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "and1": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "D": "and2",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "and2": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "begin0": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "E": "begin1",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "begin1": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "G": "begin2",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "begin2": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "I": "begin3",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "begin3": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "N": "begin4",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "begin4": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "e0": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "L": "else1",
+                "N": "end1",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "M": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "else1": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "S": "else2",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "else2": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "E": "else3",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "else3": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "end1": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "D": "end2",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "end2": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "false0": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "A": "false1",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "false1": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "L": "false2",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "false2": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "S": "false3",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "false3": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "E": "false4",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "false4": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "if0": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "F": "if1",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "if1": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "not0": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "O": "not1",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "not1": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "T": "not2",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "not2": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "or0": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "R": "or1",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "or1": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "read0": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "E": "read1",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "read1": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "A": "read2",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "read2": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "D": "read3",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "read3": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "t0": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "H": "then1",
+                "R": "true1",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "then1": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "E": "then2",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "then2": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "N": "then3",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "then3": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "true1": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "U": "true2",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "true2": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "E": "true3",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "true3": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "write0": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "R": "write1",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "write1": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "I": "write2",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "write2": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "T": "write3",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "write3": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "E": "write4",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "write4": {
+                "\n": "initial", " ": "initial",
+                "$": "final",
+                "a": "ident", "b": "ident", "c": "ident", "d": "ident", "e": "ident", "f": "ident", "g": "ident", "h": "ident", "i": "ident", "j": "ident", "k": "ident", "l": "ident", "m": "ident", "n": "ident", "o": "ident", "p": "ident", "q": "ident", "r": "ident", "s": "ident", "t": "ident", "u": "ident", "v": "ident", "w": "ident", "x": "ident", "y": "ident", "z": "ident",
+                "A": "ident", "B": "ident", "C": "ident", "D": "ident", "E": "ident", "F": "ident", "G": "ident", "H": "ident", "I": "ident", "J": "ident", "K": "ident", "L": "ident", "M": "ident", "N": "ident", "O": "ident", "P": "ident", "Q": "ident", "R": "ident", "S": "ident", "T": "ident", "U": "ident", "V": "ident", "W": "ident", "X": "ident", "Y": "ident", "Z": "ident",
+                "0": "ident", "1": "ident", "2": "ident", "3": "ident", "4": "ident", "5": "ident", "6": "ident", "7": "ident", "8": "ident", "9": "ident",
+                "*": "collector", "/": "collector", "§": "collector", "ß": "collector", "[": "collector", "]": "collector", "{": "collector", "}": "collector", "@": "collector", "€": "collector", "!": "collector", "#": "collector", "^": "collector", "%": "collector"
+            },
+            "final": {}
+        },
+        "initial_state": "initial",
+        "final_states": [
+            "final"
+        ]
+    },
+    "tokenizer": {
+        "and0_initial_ ": "ident", "and0_initial_\n": "ident", "and0_initial_$": "ident",
+        "and1_initial_ ": "ident", "and1_initial_\n": "ident", "and1_initial_$": "ident",
+        "and2_initial_ ": "and", "and2_initial_\n": "and", "and2_final_$": "and",
+        "begin0_initial_ ": "ident", "begin0_initial_\n": "ident", "begin0_final_$": "ident",
+        "begin1_initial_ ": "ident", "begin1_initial_\n": "ident", "begin1_final_$": "ident",
+        "begin2_initial_ ": "ident", "begin2_initial_\n": "ident", "begin2_final_$": "ident",
+        "begin3_initial_ ": "ident", "begin3_initial_\n": "ident", "begin3_final_$": "ident",
+        "begin4_initial_ ": "begin", "begin4_initial_\n": "begin", "begin4_final_$": "begin",
+        "else0_initial_ ": "ident", "else0_initial_\n": "ident", "else0_final_$": "ident",
+        "else1_initial_ ": "ident", "else1_initial_\n": "ident", "else1_final_$": "ident",
+        "else2_initial_ ": "ident", "else2_initial_\n": "ident", "else2_final_$": "ident",
+        "else3_initial_ ": "else", "else3_initial_\n": "else", "else3_final_$": "else",
+        "end0_initial_ ": "ident", "end0_initial_\n": "ident", "end0_final_$": "ident",
+        "end1_initial_ ": "ident", "end1_initial_\n": "ident", "end1_final_$": "ident",
+        "end2_initial_ ": "end", "end2_initial_\n": "end", "end2_final_$": "end",
+        "false0_initial_ ": "ident", "false0_initial_\n": "ident", "false0_final_$": "ident",
+        "false1_initial_ ": "ident", "false1_initial_\n": "ident", "false1_final_$": "ident",
+        "false2_initial_ ": "ident", "false2_initial_\n": "ident", "false2_final_$": "ident",
+        "false3_initial_ ": "ident", "false3_initial_\n": "ident", "false3_final_$": "ident",
+        "false4_initial_ ": "false", "false4_initial_\n": "false", "false4_final_$": "false",
+        "if0_initial_ ": "ident", "if0_initial_\n": "ident", "if0_final_$": "ident",
+        "if1_initial_ ": "if", "if1_initial_\n": "if", "if1_final_$": "if",
+        "not0_initial_ ": "ident", "not0_initial_\n": "ident", "not0_final_$": "ident",
+        "not1_initial_ ": "ident", "not1_initial_\n": "ident", "not1_final_$": "ident",
+        "not2_initial_ ": "not", "not2_initial_\n": "not", "not2_final_$": "not",
+        "or0_initial_ ": "ident", "or0_initial_\n": "ident", "or0_final_$": "ident",
+        "or1_initial_ ": "or", "or1_initial_\n": "or", "or1_final_$": "or",
+        "read0_initial_ ": "ident", "read0_initial_\n": "ident", "read0_final_$": "ident",
+        "read1_initial_ ": "ident", "read1_initial_\n": "ident", "read1_final_$": "ident",
+        "read2_initial_ ": "ident", "read2_initial_\n": "ident", "read2_final_$": "ident",
+        "read3_initial_ ": "read", "read3_initial_\n": "read", "read3_final_$": "read",
+        "then0_initial_ ": "ident", "then0_initial_\n": "ident", "then0_final_$": "ident",
+        "then1_initial_ ": "ident", "then1_initial_\n": "ident", "then1_final_$": "ident",
+        "then2_initial_ ": "ident", "then2_initial_\n": "ident", "then2_final_$": "ident",
+        "then3_initial_ ": "then", "then3_initial_\n": "then", "then3_final_$": "then",
+        "true0_initial_ ": "ident", "true0_initial_\n": "ident", "true0_final_$": "ident",
+        "true1_initial_ ": "ident", "true1_initial_\n": "ident", "true1_final_$": "ident",
+        "true2_initial_ ": "ident", "true2_initial_\n": "ident", "true2_final_$": "ident",
+        "true3_initial_ ": "true", "true3_initial_\n": "true", "true3_final_$": "true",
+        "write0_initial_ ": "ident", "write0_initial_\n": "ident", "write0_final_$": "ident",
+        "write1_initial_ ": "ident", "write1_initial_\n": "ident", "write1_final_$": "ident",
+        "write2_initial_ ": "ident", "write2_initial_\n": "ident", "write2_final_$": "ident",
+        "write3_initial_ ": "ident", "write3_initial_\n": "ident", "write3_final_$": "ident",
+        "write4_initial_ ": "write", "write4_initial_\n": "write", "write4_final_$": "write",
+        "ident_initial_ ": "ident", "ident_initial_\n": "ident", "ident_final_$": "ident",
+        "num0_initial_ ": "num", "num0_initial_\n": "num", "num0_final_$": "num",
+        "num_initial_ ": "num", "num_initial_\n": "num", "num_final_$": "num",
+        "plus_initial_ ": "plus", "plus_initial_\n": "plus", "plus_final_$": "plus",
+        "minus_initial_ ": "minus", "minus_initial_\n": "minus", "minus_final_$": "minus",
+        "comma_initial_ ": "comma", "comma_initial_\n": "comma", "comma_final_$": "comma",
+        "openparen_initial_ ": "openparen", "openparen_initial_\n": "openparen", "openparen_final_$": "openparen",
+        "closeparen_initial_ ": "closeparen", "closeparen_initial_\n": "closeparen", "closeparen_final_$": "closeparen",
+        "semicolon_initial_ ": "semicolon", "semicolon_initial_\n": "semicolon", "semicolon_final_$": "semicolon",
+        "assignment1_initial_ ": "assignment", "assignment1_initial_\n": "assignment", "assignment1_final_$": "assignment"
+    }
+}

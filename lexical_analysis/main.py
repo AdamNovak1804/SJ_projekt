@@ -24,10 +24,22 @@ def preprocess_program_string(program_string: str) -> str:
     return program_string
 
 
-def perform_lexical_anaylsis() -> None:
+def perform_lexical_anaylsis(lexical_mode: bool | None) -> None:
     # load lexical analysis configuration file
     logger.info('Extracting configuration dictionary from config file for lexical analyzer')
-    config = read_config_json('lexical_analysis/config.json')
+
+    config_path = 'lexical_analysis/'
+    if lexical_mode is None:
+        logger.info('Performing lexical analysis without any correction mode')
+        config_path += 'config.json'
+    elif lexical_mode is True:
+        logger.info('Performing lexical analysis with SKIP correction mode')
+        config_path += 'config-skip.json'
+    else:
+        logger.info('Performing lexical analysis with CORRECT correction mode')
+        config_path += 'config-correct.json'
+
+    config = read_config_json(config_path)
 
     # TODO: change configuration file to perform SMALL language lexical analysis
     # creating DFA with args from config file
@@ -50,6 +62,8 @@ def perform_lexical_anaylsis() -> None:
 
     # Add whitespaces between symbols and terminal symbol at the end
     program_string = preprocess_program_string(program_string)
+
+    print(repr(program_string))
 
     # create a generator object that yields current state for every iteration until final state
     dfa_stepwise_generator = lexical_analyser.read_input_stepwise(input_str=program_string)
