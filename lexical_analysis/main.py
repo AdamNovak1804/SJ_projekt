@@ -63,8 +63,6 @@ def perform_lexical_anaylsis(lexical_mode: bool | None) -> None:
     # Add whitespaces between symbols and terminal symbol at the end
     program_string = preprocess_program_string(program_string)
 
-    print(repr(program_string))
-
     # create a generator object that yields current state for every iteration until final state
     dfa_stepwise_generator = lexical_analyser.read_input_stepwise(input_str=program_string)
 

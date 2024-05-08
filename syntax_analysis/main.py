@@ -5,19 +5,26 @@ from file_reader.file_reader import read_token_stream
 
 logger = logging.getLogger('logger')
 
-def perform_syntax_anaylsis() -> None:
-    logger.info("Performing syntax analysis....")
+def perform_syntax_anaylsis(syntax_mode: bool | None) -> None:
     tokens = read_token_stream("outputs/token_stream")
     error_correction = 0
+
+    if syntax_mode is None:
+        logger.info('Performing syntax analysis without any correction mode')
+    elif syntax_mode is True:
+        logger.info('Performing syntax analysis with Panic Mode Recovery correction mode')
+    else:
+        logger.info('Performing syntax analysis with Phrase level correction mode')
 
     stack = ["PROGRAM"]
     number = 0
     token = tokens[number]
+    correction = False
     while number != len(tokens):
         if token != stack[-1]:
             value = rules.get(stack[-1] + token, None)
             if value == None:
-                if error_correction == 3:
+                if syntax_mode is True:
                     if(token != ";" and token!= "END"):
                         logger.info(f"No rule found for {stack[-1]} {token}. Skipping token")
                         number += 1
@@ -26,17 +33,18 @@ def perform_syntax_anaylsis() -> None:
                     else:
                         logger.info(f"No rule found for {stack[-1]} {token}. {token} is synchronization token. Program is not valid.")
                         break
-                elif error_correction == 4:
+                elif syntax_mode is False and not correction:
                     if(tokens[number-1] not in ("number", ")", ";", "ident")):
                         logger.info(f"No rule found for {stack[-1]} {token}. Adding semicolon")
-                        tokens.insert(number, ";")
+                        tokens.insert(number, "semicolon")
                         token = tokens[number]
+                        correction = True
                         continue
                 
                 logger.info(f"No rule found for {stack[-1]} {token}")
                 break
             rule_list = value.split("=")[1].split(" ")
-            logger.info(f"Value in stack {stack[-1]} exchanged with {rule_list[::-1]}") 
+            logger.info(f"Value in stack {stack[-1]} exchanged with rule {value}") 
             logger.info(f"Rule is epsilon, only pop {stack[-1]} from stack")
             stack.pop()
             for rule in rule_list[::-1]:
@@ -53,3 +61,4 @@ def perform_syntax_anaylsis() -> None:
                 break
             number += 1
             token = tokens[number]
+            correction = False
