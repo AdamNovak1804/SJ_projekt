@@ -1,7 +1,8 @@
 BEGIN
-    IF TRUE THEN
-        t19a8 := (57 - hgd5e7) + t11
-    ;
+    c := -97
+    WRITE (
+        +487 - (c * (-8)),
+        bebe,
+        bebe + c - (c - /5)
+    );
 END
-
-
