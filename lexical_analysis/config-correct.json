@@ -515,6 +515,7 @@
         "ident_initial_ ": "ident", "ident_initial_\n": "ident", "ident_final_$": "ident",
         "num0_initial_ ": "num", "num0_initial_\n": "num", "num0_final_$": "num",
         "num_initial_ ": "num", "num_initial_\n": "num", "num_final_$": "num",
+        "num1_initial_ ": "num", "num1_initial_\n": "num", "num1_final_$": "num",
         "plus_initial_ ": "plus", "plus_initial_\n": "plus", "plus_final_$": "plus",
         "minus_initial_ ": "minus", "minus_initial_\n": "minus", "minus_final_$": "minus",
         "comma_initial_ ": "comma", "comma_initial_\n": "comma", "comma_final_$": "comma",

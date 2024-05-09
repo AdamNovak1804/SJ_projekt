@@ -25,7 +25,7 @@ def perform_syntax_anaylsis(syntax_mode: bool | None) -> None:
             value = rules.get(stack[-1] + token, None)
             if value == None:
                 if syntax_mode is True:
-                    if(token != ";" and token!= "END"):
+                    if token != "semicolon" and token!= "end":
                         logger.info(f"No rule found for {stack[-1]} {token}. Skipping token")
                         number += 1
                         token = tokens[number]
@@ -34,7 +34,7 @@ def perform_syntax_anaylsis(syntax_mode: bool | None) -> None:
                         logger.info(f"No rule found for {stack[-1]} {token}. {token} is synchronization token. Program is not valid.")
                         break
                 elif syntax_mode is False and not correction:
-                    if(tokens[number-1] not in ("number", ")", ";", "ident")):
+                    if tokens[number-1] not in ("number", "closeparen", "semicolon", "ident"):
                         logger.info(f"No rule found for {stack[-1]} {token}. Adding semicolon")
                         tokens.insert(number, "semicolon")
                         token = tokens[number]
